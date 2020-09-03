@@ -30,6 +30,14 @@ Once the time for the assessment is up, push your code to your fork and create a
 * Your Name
 * A reflection on how you felt you did with this challenge and what story you got through
 
+## Requirements
+
+TDD all new work; any model METHODS you write must be fully tested.
+
+## Not Required
+
+No visual styling is required or expected
+
 ## User Stories
 
 User stories will be released at the start of the assessment.
