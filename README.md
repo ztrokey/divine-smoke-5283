@@ -32,11 +32,13 @@ Once the time for the assessment is up, push your code to your fork and create a
 
 ## Requirements
 
-TDD all new work; any model METHODS you write must be fully tested.
+* TDD all new work
+* model methods and relationships must be fully tested.
 
 ## Not Required
 
-No visual styling is required or expected
+* No visual styling is required or expected
+* You do not need to test for or create any model validations.
 
 ## User Stories
 
