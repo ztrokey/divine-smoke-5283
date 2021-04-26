@@ -51,6 +51,10 @@ Community Garden is an app that tracks Gardens, Plots, and Plants.
  	* Ex: number: 25, size: "Large", direction: "East"
 * Plants have a name, description, and days to harvest.
   * Ex: name: "Purple Beauty Sweet Bell Pepper", description: "Prefers rich, well draining soil.", days_to_harvest: 90
+* Gardens have many plots
+* Plots belong to a Garden
+* Plants can be in many Plots
+* Plots have many Plants
 
 Some of the initial migrations and model set up has been done for you.
 
