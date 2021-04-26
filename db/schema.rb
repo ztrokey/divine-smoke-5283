@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 2021_04_26_142539) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actors", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.boolean "currently_working"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.boolean "organic"
@@ -30,26 +22,8 @@ ActiveRecord::Schema.define(version: 2021_04_26_142539) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "movie_credits", force: :cascade do |t|
-    t.bigint "actor_id"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["actor_id"], name: "index_movie_credits_on_actor_id"
-    t.index ["movie_id"], name: "index_movie_credits_on_movie_id"
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.integer "creation_year"
-    t.string "genre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "studio_id"
-    t.index ["studio_id"], name: "index_movies_on_studio_id"
-  end
-
   create_table "plots", force: :cascade do |t|
+    t.integer "number"
     t.string "size"
     t.string "direction"
     t.bigint "garden_id"
@@ -58,15 +32,5 @@ ActiveRecord::Schema.define(version: 2021_04_26_142539) do
     t.index ["garden_id"], name: "index_plots_on_garden_id"
   end
 
-  create_table "studios", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "movie_credits", "actors"
-  add_foreign_key "movie_credits", "movies"
-  add_foreign_key "movies", "studios"
   add_foreign_key "plots", "gardens"
 end
