@@ -23,12 +23,13 @@ RSpec.describe 'plots index page' do
   # I see a list of all plot numbers
   # And under each plot number I see names of all that plot's plants
   it 'shows a list of all the plot numbers and associated plot plants' do
-    save_and_open_page
-    expect(page).to have_content(@plot1.number)
-    expect(page).to have_content(@plot2.number)
-    expect(page).to have_content(@plant1.name)
-    expect(page).to have_content(@plant2.name)
-    expect(page).to have_content(@plant3.name)
+    within "#plot-#{@plot1.id}" do
+      expect(page).to have_content(@plant1.name)
+      expect(page).to have_content(@plant3.name)
+    end
+
+    within "#plot-#{@plot2.id}" do
+      expect(page).to have_content(@plant2.name)
+    end
   end
 end
-
