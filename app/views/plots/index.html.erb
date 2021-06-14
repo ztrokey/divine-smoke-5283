@@ -6,6 +6,7 @@
       <li>Plot Number: <%= plot.number %></li>
       <% plot.plants.each do |plant| %>
         <li>Plant Name: <%= plant.name %></li>
+        <%= link_to "Remove #{plant.name}", "/plots/#{plot.id}/plants/#{plant.id}/edit" %>
       <% end %>
     </ul>
   </section>
