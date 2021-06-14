@@ -1,1 +1,7 @@
 <h1><%= @garden.name %></h1>
+
+<% @garden.fast_plants.each do |plant| %>
+  <ul>
+    <li><%= plant %></li>
+  </ul>
+<% end %>
